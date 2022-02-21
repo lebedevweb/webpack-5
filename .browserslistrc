@@ -1,0 +1,12 @@
+[production]
+last 4 chrome versions
+last 4 firefox versions
+last 4 safari versions
+last 4 opera versions
+last 3 ie versions
+> 0.2%
+not op_mini all
+
+[development]
+last 1 chrome version
+last 1 firefox version

@@ -1,0 +1,173 @@
+.header
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  background: $light
+  box-shadow: 0 2px 4px #e9e9e9
+  padding-top: 20px
+  padding-bottom: 20px
+  z-index: 900
+
+  @media only screen and (max-width: 1199px)
+    padding-top: 14px
+    padding-bottom: 14px
+
+  &__row
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+  &__logo
+    display: block
+    width: 187px
+
+    & > svg
+      fill: $dark
+
+  &__menu
+    display: flex
+
+    @media only screen and (max-width: 1199px)
+      display: none
+
+    & > li
+      color: $dark
+      list-style: none
+
+      &:not(:last-child)
+        margin-right: 50px
+
+      &.dropdown
+        cursor: pointer
+        display: flex
+        align-items: center
+
+        &::after
+          display: block
+          content: ''
+          width: 10px
+          height: 6px
+          background:
+            image: url("data:image/svg+xml,%3Csvg viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 1.25L6 6.75L1 1.25' stroke='%23ACAFF3' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A")
+            size: cover
+            position: center
+            repeat: no-repeat
+          margin-left: 12px
+
+      & > a
+        color: inherit
+        text-decoration: none
+
+  &__group
+    display: flex
+    align-items: center
+    padding-left: 58px
+
+    @media only screen and (max-width: 1199px)
+      padding-left: 0
+
+  &__dropdown
+    cursor: pointer
+    display: flex
+    align-items: center
+    background: #ffffff
+    border-radius: 5px
+    padding: 8px 12px 8px 10px
+    margin-right: 90px
+
+    @media only screen and (max-width: 1199px)
+      display: none
+
+    & > img
+      display: block
+
+    & > svg
+      margin-left: 14px
+
+  &__ava
+    position: relative
+    width: 40px
+    min-width: 40px
+    height: 40px
+    overflow: hidden
+    margin-right: 60px
+
+    @media only screen and (max-width: 1199px)
+      display: none
+
+    & > svg
+      position: absolute
+      top: 0
+      left: 0
+      width: 40px
+      height: 40px
+      z-index: 1
+
+    &__image
+      position: relative
+      width: 34px
+      height: 34px
+      margin-top: 3px
+      margin-left: 3px
+      border-radius: 50%
+      overflow: hidden
+
+      & > img
+        position: absolute
+        display: block
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        object-fit: cover
+        object-position: center
+
+  &__bag
+    position: relative
+    text-decoration: none
+    width: 40px
+    min-width: 40px
+    height: 40px
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 24'%3E%3Cpath d='M7.05,7.5A2.56,2.56,0,0,0,4.5,10.05a1.93,1.93,0,0,0,.15.75,1.93,1.93,0,0,0,1,1,1.93,1.93,0,0,0,.75.15h5.1a1.93,1.93,0,0,0,.75-.15,1.93,1.93,0,0,0,1-1,1.93,1.93,0,0,0,.15-.75A2.56,2.56,0,0,0,11,7.5ZM6,10.05A1.06,1.06,0,0,1,7.05,9H11A1.06,1.06,0,0,1,12,10.05a.44.44,0,0,1-.45.45H6.45A.44.44,0,0,1,6,10.05ZM9,0A3.76,3.76,0,0,0,5.25,3.75v.07A9,9,0,0,0,0,12v7.5A4.51,4.51,0,0,0,4.5,24h9A4.51,4.51,0,0,0,18,19.5V12a9,9,0,0,0-5.25-8.18V3.75A3.76,3.76,0,0,0,9,0Zm7.5,15H1.5V12a7.5,7.5,0,0,1,15,0Zm-12,3.75a.75.75,0,0,0,1.5,0V16.5H16.5v3a3,3,0,0,1-3,3h-9a3,3,0,0,1-3-3v-3h3ZM9,3a8.84,8.84,0,0,0-2.2.27A2.25,2.25,0,0,1,7.59,2a2.24,2.24,0,0,1,2.82,0,2.25,2.25,0,0,1,.79,1.27A8.9,8.9,0,0,0,9,3Z' style='fill:%23222'/%3E%3C/svg%3E")
+    background-size: 21px 28px
+    background-repeat: no-repeat
+    background-position: center
+
+    @media only screen and (max-width: 1199px)
+      width: 32px
+      min-width: 32px
+      height: 32px
+      background-size: 17px 22px
+      margin-right: 22px
+
+    &__counter
+      position: absolute
+      display: flex
+      justify-content: center
+      align-items: center
+      top: 20px
+      left: 20px
+      width: 16px
+      height: 16px
+      font-size: 12px
+      border: 3px solid $light
+      border-radius: 50%
+      background-color: $cyan
+
+      &::before
+        content: attr(data-counter)
+        display: block
+        color: #ffffff
+
+      @media only screen and (max-width: 1199px)
+        top: 15px
+        left: 15px
+
+
+  &__burger
+    display: none
+
+    @media only screen and (max-width: 1199px)
+      display: block
+      cursor: pointer
